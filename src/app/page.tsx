@@ -22,13 +22,14 @@ export default function Home() {
       { root: null, threshold: 0.5 }
     );
 
-    if (homeRef.current) {
-      observer.observe(homeRef.current);
+    const currentHomeRef = homeRef.current;
+    if (currentHomeRef) {
+      observer.observe(currentHomeRef);
     }
 
     return () => {
-      if (homeRef.current) {
-        observer.unobserve(homeRef.current);
+      if (currentHomeRef) {
+        observer.unobserve(currentHomeRef);
       }
     };
   }, []);
