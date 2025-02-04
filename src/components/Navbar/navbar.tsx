@@ -31,7 +31,6 @@ export default function Navbar({
   projectsRef,
   aboutRef,
 }: RefProps) {
-
   const scrollToHome = () => {
     if (homeRef?.current) {
       homeRef?.current.scrollIntoView({ behavior: "smooth" });
@@ -61,25 +60,38 @@ export default function Navbar({
       <div className="relative mx-auto max-w-container">
         <NavbarComponent>
           <Link
-            href="/"
+            href=""
             className="flex items-center gap-2 text-xl font-bold text-white"
           >
             <LaunchUI />
           </Link>
           <NavbarLeft className="mt-2">
-            <Link href="" onClick={scrollToHome} className="hidden mr-6 text-sm text-white md:block">
+            <button
+              onClick={scrollToHome}
+              className="hidden mr-6 text-sm text-white md:block"
+            >
               Inicio
-            </Link>
-            <Link href="" onClick={scrollToAbout} className="hidden mr-6 text-sm text-white md:block">
-              Sobre mi
-            </Link>
-            <Link href="" onClick={scrollToExperience} className="hidden mr-6 text-sm text-white md:block">
+            </button>
+            <button
+              onClick={scrollToAbout}
+              className="hidden mr-6 text-sm text-white md:block"
+            >
+              Sobre mí
+            </button>
+            <button
+              onClick={scrollToExperience}
+              className="hidden mr-6 text-sm text-white md:block"
+            >
               Mi experiencia
-            </Link>
-            <Link href="" onClick={scrollToProjects} className="hidden mr-6 text-sm text-white md:block">
+            </button>
+            <button
+              onClick={scrollToProjects}
+              className="hidden mr-6 text-sm text-white md:block"
+            >
               Mis proyectos
-            </Link>
+            </button>
           </NavbarLeft>
+
           <NavbarRight>
             <Sheet>
               <SheetTrigger asChild>
@@ -93,16 +105,14 @@ export default function Navbar({
                 </Button>
               </SheetTrigger>
               <SheetContent side="right">
-
                 <SheetTitle>
                   <LaunchUI />
                 </SheetTitle>
-                <SheetDescription>
-                 
-                </SheetDescription>
+                <SheetDescription></SheetDescription>
                 <nav className="grid gap-6 text-lg font-medium">
                   <Link
-                    href="" onClick={scrollToHome}
+                    href=""
+                    onClick={scrollToHome}
                     className="flex items-center mt-4 gap-2 text-xl text-black"
                   >
                     Inicio
@@ -110,10 +120,18 @@ export default function Navbar({
                   <Link href="" onClick={scrollToAbout} className=" text-black">
                     Sobre mí
                   </Link>
-                  <Link href="" onClick={scrollToExperience} className=" text-black">
+                  <Link
+                    href=""
+                    onClick={scrollToExperience}
+                    className=" text-black"
+                  >
                     Mi experiencia
                   </Link>
-                  <Link href="" onClick={scrollToProjects} className=" text-black">
+                  <Link
+                    href=""
+                    onClick={scrollToProjects}
+                    className=" text-black"
+                  >
                     Mis proyectos
                   </Link>
                 </nav>

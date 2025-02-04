@@ -1,50 +1,65 @@
 "use client";
 
 import About from "@/components/About/About";
+import BtnBackHome from "@/components/BtnBackHome/btnBackHome";
 import HomeContent from "@/components/Home/homeContent";
 import Navbar from "@/components/Navbar/navbar";
 import { ShootingStars } from "@/components/ui/shooting-stars";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+  const [showBtnBackHome, setShowBtnBackHome] = useState(false);
   const aboutRef = useRef<HTMLDivElement>(null);
   const homeRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (aboutRef.current) {
-      aboutRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowBtnBackHome(!entry.isIntersecting);
+      },
+      { root: null, threshold: 0.5 }
+    );
+
     if (homeRef.current) {
-      homeRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      observer.observe(homeRef.current);
     }
+
+    return () => {
+      if (homeRef.current) {
+        observer.unobserve(homeRef.current);
+      }
+    };
   }, []);
 
   return (
-    <div className="h-screen w-full bg-black relative overflow-y-scroll">
+    <div className="h-full w-full bg-black relative overflow-y">
       {/* Fondo y estrellas */}
       <div className="absolute inset-0 h-screen">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.15)_0%,rgba(0,0,0,0)_80%)]" />
         <div className="stars absolute inset-0" />
       </div>
-
       <Navbar
         aboutRef={aboutRef}
         homeRef={homeRef}
         experienceRef={experienceRef}
         projectsRef={projectsRef}
       />
-
-      {/* Home Content */}
       <div ref={homeRef} className="h-screen">
         <HomeContent />
       </div>
-
       <div ref={aboutRef} className="h-screen">
         <About />
       </div>
-
+      ¡{" "}
+      <div
+        className={`fixed bottom-8 right-40 z-50 transition-all duration-300 ease-in-out transform ${
+          showBtnBackHome ? "opacity-100 scale-100" : "opacity-0 scale-0"
+        }`}
+      >
+        <BtnBackHome homeRef={homeRef} />
+      </div>
       {/* Shooting Stars */}
       <ShootingStars
         className="absolute inset-0"
@@ -55,7 +70,6 @@ export default function Home() {
         minDelay={1000}
         maxDelay={3000}
       />
-
       <ShootingStars
         starColor="#9E00FF"
         trailColor="#2EB9DF"
@@ -64,7 +78,6 @@ export default function Home() {
         minDelay={1000}
         maxDelay={3000}
       />
-
       <ShootingStars
         starColor="#9E00FF"
         trailColor="#2EB9DF"
@@ -73,7 +86,6 @@ export default function Home() {
         minDelay={1000}
         maxDelay={3000}
       />
-
       <ShootingStars
         starColor="#9E00FF"
         trailColor="#2EB9DF"
@@ -82,7 +94,6 @@ export default function Home() {
         minDelay={1000}
         maxDelay={3000}
       />
-
       <style jsx>{`
         .stars {
           background-image: radial-gradient(
