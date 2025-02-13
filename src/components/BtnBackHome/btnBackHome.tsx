@@ -9,8 +9,6 @@ interface HomeRefProps {
 
 const BtnBackHome = ({ homeRef }: HomeRefProps) => {
   const scrollToHome = () => {
-    console.log("homeRef.current:", homeRef?.current); 
-
     if (homeRef?.current) {
       homeRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }

@@ -1,0 +1,81 @@
+/* navbar.css */
+
+.navbar {
+    @apply flex justify-between items-center p-4 bg-transparent relative z-50;
+}
+
+.navbar-brand {
+    @apply flex items-center text-xl font-bold text-black cursor-pointer;
+}
+
+.navbar-menu {
+    @apply hidden md:flex gap-6 justify-center flex-1;
+}
+
+.navbar-item {
+    @apply text-sm text-white cursor-pointer relative;
+}
+
+.navbar-item:hover {
+    @apply text-white; /* Asegúrate de que el texto sea blanco al hacer hover */
+}
+
+/* Subrayado con rayos que aparece al hacer hover */
+.navbar-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px; /* Ajusta la posición vertical del subrayado */
+    height: 2px; /* Altura del subrayado */
+    background: linear-gradient(to right, white, transparent, white);
+    background-size: 200% 100%; /* Para crear un efecto de "rayos" */
+    background-position: 0 0; /* Comienza desde la izquierda */
+    transition: background-position 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transición suave */
+    opacity: 0; /* Oculto por defecto */
+}
+
+.navbar-item:hover::after {
+    background-position: 100% 0; /* Mueve el fondo al hacer hover */
+    opacity: 1; /* Muestra el subrayado al hacer hover */
+}
+
+/* Menú lateral */
+.sidebar {
+    @apply fixed top-0 right-0 w-1/3 h-full bg-white text-black p-4 transform transition-transform duration-300 ease-in-out;
+}
+
+/* Animaciones para el menú lateral */
+.sidebar-enter {
+    @apply translate-x-full;
+}
+
+.sidebar-enter-active {
+    @apply translate-x-0;
+}
+
+.sidebar-leave {
+    @apply translate-x-0;
+}
+
+.sidebar-leave-active {
+    @apply translate-x-full;
+}
+
+/* Botones dentro del sidebar */
+.sidebar-button {
+    @apply block text-xl text-black mb-4 transition duration-200 ease-in-out;
+}
+
+.sidebar-button:hover {
+    @apply underline;
+}
+
+/* Botón de cerrar en el sidebar */
+.close-button {
+    @apply absolute top-4 right-4 bg-transparent border-none cursor-pointer;
+}
+
+.close-button:hover {
+    @apply opacity-80; /* Añadir efecto de hover si es necesario */
+}
