@@ -63,7 +63,7 @@ export default function Home() {
       <div ref={aboutRef} className="h-100">
         <About />
       </div>
-      <div className="h-screen">
+      <div ref={experienceRef} className="h-screen">
         <Experience />
       </div>
       ¡{" "}

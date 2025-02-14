@@ -1,7 +1,7 @@
 "use client";
 
 import { MutableRefObject, useState } from "react";
-import { IoMdClose } from "react-icons/io"; // Importa el ícono de cruz
+import { IoMdClose } from "react-icons/io"; 
 import LaunchUI from "@/components/logos/launch-ui";
 import "./navbar.css";
 
@@ -87,7 +87,7 @@ export default function NavbarComponent({
         }`}
       >
         <div
-          className={`bg-white w-1/3 h-full p-4 transform transition-transform duration-300 ease-in-out ${
+          className={`bg-white w-[60vw] h-full p-4 transform transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >

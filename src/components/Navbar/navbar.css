@@ -1,5 +1,3 @@
-/* navbar.css */
-
 .navbar {
     @apply flex justify-between items-center p-4 bg-transparent relative z-50;
 }
@@ -17,32 +15,31 @@
 }
 
 .navbar-item:hover {
-    @apply text-white; /* Asegúrate de que el texto sea blanco al hacer hover */
+    @apply text-white; 
 }
 
-/* Subrayado con rayos que aparece al hacer hover */
 .navbar-item::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -2px; /* Ajusta la posición vertical del subrayado */
-    height: 2px; /* Altura del subrayado */
+    bottom: -2px; 
+    height: 2px; 
     background: linear-gradient(to right, white, transparent, white);
-    background-size: 200% 100%; /* Para crear un efecto de "rayos" */
-    background-position: 0 0; /* Comienza desde la izquierda */
-    transition: background-position 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transición suave */
-    opacity: 0; /* Oculto por defecto */
+    background-size: 200% 100%; 
+    background-position: 0 0; 
+    transition: background-position 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    opacity: 0; 
 }
 
 .navbar-item:hover::after {
-    background-position: 100% 0; /* Mueve el fondo al hacer hover */
-    opacity: 1; /* Muestra el subrayado al hacer hover */
+    background-position: 100% 0; 
+    opacity: 1; 
 }
 
 /* Menú lateral */
 .sidebar {
-    @apply fixed top-0 right-0 w-1/3 h-full bg-white text-black p-4 transform transition-transform duration-300 ease-in-out;
+    @apply fixed top-0 right-0 w-[60vw] h-full bg-white text-black p-4 transform transition-transform duration-300 ease-in-out;
 }
 
 /* Animaciones para el menú lateral */
