@@ -101,7 +101,7 @@ const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
           </Card>
         </div>
 
-        <div className="w-full mt-20 overflow-hidden">
+        <div className="w-full mt-10 overflow-hidden">
           <div className="flex items-center space-x-6 animate-scroll px-6">
             {[...techStack, ...techStack].map((tech, index) => (
               <div
@@ -117,7 +117,6 @@ const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
           </div>
         </div>
 
-        {/* Animación con Tailwind */}
         <style jsx>{`
           @keyframes scroll {
             from {

@@ -2,6 +2,7 @@
 
 import About from "@/components/About/About";
 import BtnBackHome from "@/components/BtnBackHome/btnBackHome";
+import Experience from "@/components/Experience/Experience";
 import HomeContent from "@/components/Home/homeContent";
 import Navbar from "@/components/Navbar/navbar";
 import { ShootingStars } from "@/components/ui/shooting-stars";
@@ -23,13 +24,22 @@ export default function Home() {
     );
 
     const currentHomeRef = homeRef.current;
+    const currentAboutRef = aboutRef.current;
     if (currentHomeRef) {
       observer.observe(currentHomeRef);
+    }
+
+    else if (currentAboutRef) {
+      observer.observe(currentAboutRef);
     }
 
     return () => {
       if (currentHomeRef) {
         observer.unobserve(currentHomeRef);
+      }
+
+      else if (currentAboutRef) {
+        observer.unobserve(currentAboutRef);
       }
     };
   }, []);
@@ -50,8 +60,11 @@ export default function Home() {
       <div ref={homeRef} className="h-screen">
         <HomeContent />
       </div>
-      <div ref={aboutRef} className="h-screen">
+      <div ref={aboutRef} className="h-100">
         <About />
+      </div>
+      <div ref={experienceRef} className="h-screen">
+        <Experience />
       </div>
       ¡{" "}
       <div
