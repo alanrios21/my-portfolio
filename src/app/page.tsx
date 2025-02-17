@@ -3,6 +3,7 @@
 import About from "@/components/About/About";
 import BtnBackHome from "@/components/BtnBackHome/btnBackHome";
 import Experience from "@/components/Experience/Experience";
+import GmailButton from "@/components/GmailButton/GmailButton";
 import HomeContent from "@/components/Home/homeContent";
 import Navbar from "@/components/Navbar/navbar";
 import { ShootingStars } from "@/components/ui/shooting-stars";
@@ -74,6 +75,7 @@ export default function Home() {
       >
         <BtnBackHome homeRef={homeRef} />
       </div>
+        <GmailButton/>
       {/* Shooting Stars */}
       <ShootingStars
         className="absolute inset-0"

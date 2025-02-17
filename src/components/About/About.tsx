@@ -29,6 +29,7 @@ import {
   SiPostman,
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 
 const techStack = [
   { name: "React", icon: <FaReact className="text-blue-400 text-4xl" /> },
@@ -67,7 +68,7 @@ const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
         className="w-full bg-black text-white flex flex-col items-center py-20"
       >
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-[1fr] gap-8 px-6">
-          <Card className="w-full h-auto xl:h-[300px] lg:h-[300px] md:h-[370px] bg-black border border-gray-700 p-6 flex flex-col sm:flex-row items-center sm:items-start">
+          <Card className="w-full h-auto xl:h-[380px] lg:h-[420px] md:h-[480px] md:-ml-8 bg-black border border-gray-700 p-6 flex flex-col sm:flex-row items-center sm:items-start">
             <div className="w-32 h-32 sm:w-[450px] sm:h-[450px] md:w-[450px] md:h-[450px]lg:w-[450px] lg:h-[450px] xl:w-[450px] xl:h-[450px] relative mb-5 sm:mb-0 md:mb-0">
               <Image
                 src="/Profile.png"
@@ -96,6 +97,29 @@ const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
                   servicios financieros pero no me cierro a la idea de
                   participar en productos de otros rubros.
                 </p>
+                <p className="mt-4 text-sm sm:text-lg">
+                  Pueden contactarme a través de mis redes sociales
+                </p>
+                <div className="mt-6 flex space-x-6">
+                  <a
+                    href="https://github.com/alanrios21"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-gray-400 hover:text-white z-50"
+                  >
+                    <FaGithub className="text-3xl" />
+                    <span className="ml-2 text-sm sm:text-lg">GitHub</span>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/alan-rios/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center cursor-pointer text-gray-400 hover:text-white z-50"
+                  >
+                    <FaLinkedin className="text-3xl" />
+                    <span className="ml-2 text-sm sm:text-lg">LinkedIn</span>
+                  </a>
+                </div>
               </CardContent>
             </div>
           </Card>

@@ -110,6 +110,24 @@ export default function Experience() {
             <CardTitle className="text-2xl text-white text-center">
               Mi experiencia
             </CardTitle>
+            {/* Chips de tecnologías */}
+            <div className="flex flex-wrap gap-2 justify-center pt-5">
+              {[
+                "Typescript",
+                "React",
+                "Next",
+                "Nest",
+                "Postgres SQL",
+                "Jest",
+              ].map((tech) => (
+                <span
+                  key={tech}
+                  className="bg-gray-700 text-white text-xs font-semibold px-2 py-1 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </CardHeader>
           <div className="relative">
             {experiences.map((exp, index) => (
@@ -157,9 +175,10 @@ export default function Experience() {
                     {exp.clients ? (
                       exp.clients.map((client, i) => (
                         <div key={i} className="px-5 text-gray-300">
-                          <span className="font-semibold text-[14px] sm:text-[16px]">
+                          <span className="font-semibold text-[14px] sm:text-[16px] pt-2 pb-2 block">
                             {client.name}
                           </span>
+
                           <ul className="list-none text-[13px] sm:text-[16px]">
                             {client.tasks.map((task, j) => (
                               <li key={j} className="flex items-start mb-1">
