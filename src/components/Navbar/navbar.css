@@ -37,30 +37,25 @@
     opacity: 1;
 }
 
-/* Sidebar */
 .sidebar {
     @apply fixed top-0 right-0 w-[60vw] h-full bg-white text-black p-4 border-none transform translate-x-full transition-transform duration-300 ease-in-out;
     box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Cuando el sidebar está abierto */
 .sidebar.open {
     @apply translate-x-0;
 }
 
-/* Botón de menú hamburguesa */
 .menu-button {
     @apply block md:hidden text-white z-50 relative;
 }
 
-/* Corrección: Usamos CSS puro para evitar el error de Tailwind */
 .menu-button.fixed {
     position: fixed;
     top: 16px;
     right: 16px;
 }
 
-/* Botones dentro del sidebar */
 .sidebar-button {
     @apply block text-xl text-black mb-4 transition duration-200 ease-in-out;
 }
@@ -69,7 +64,6 @@
     @apply underline;
 }
 
-/* Botón de cerrar en el sidebar */
 .close-button {
     @apply absolute top-4 right-4 bg-transparent border-none cursor-pointer;
 }

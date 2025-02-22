@@ -2,7 +2,6 @@
 
 import { MutableRefObject, useState, useEffect, useRef } from "react";
 import { IoMdClose } from "react-icons/io";
-import LaunchUI from "@/components/logos/launch-ui";
 import gsap from "gsap";
 import "./navbar.css";
 import ButtonLanguague from "../BtnLanguaje/BtnLanguaje";
@@ -76,9 +75,6 @@ export default function NavbarComponent({
     <header className="navbar">
       <div className="flex items-center">
         <ButtonLanguague />
-        <button onClick={() => scrollTo(homeRef)} className="text-xl font-bold text-white">
-          <LaunchUI />
-        </button>
       </div>
 
       <nav className="navbar-menu">
@@ -88,7 +84,6 @@ export default function NavbarComponent({
         <div onClick={() => scrollTo(projectsRef)} className="navbar-item">{t.navbar.projects}{" "}</div>
       </nav>
 
-      {/* Botón de menú hamburguesa */}
       <button
         className={`menu-button ${isOpen ? "fixed" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
@@ -98,7 +93,6 @@ export default function NavbarComponent({
         </svg>
       </button>
 
-      {/* Sidebar */}
       <div ref={sidebarRef} className={`sidebar z-50 ${isOpen ? "open" : ""}`}>
         <button className="close-button" onClick={closeMenu}>
           <IoMdClose className="h-6 w-6 text-black" />

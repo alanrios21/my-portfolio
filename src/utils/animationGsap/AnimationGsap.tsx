@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 import { RefObject } from "react";
 
 export const buttonTranslateAnimate = ({ buttonTranslateRef }: { buttonTranslateRef: RefObject<HTMLDivElement | null> }) => {
-  if (!buttonTranslateRef.current) return; // Asegura que el ref no sea null
+  if (!buttonTranslateRef.current) return; 
   
   gsap.from(buttonTranslateRef.current, {
     opacity: 0,

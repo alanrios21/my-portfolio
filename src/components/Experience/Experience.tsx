@@ -6,8 +6,8 @@ import { Card, CardHeader, CardTitle } from "../ui/card";
 import { useTranslation } from "@/Hooks/useTranslation";
 
 export default function Experience() {
-  const t = useTranslation(); 
-  const experiences = t.experience?.experiences || []; 
+  const t = useTranslation();
+  const experiences = t.experience?.experiences || [];
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
@@ -17,13 +17,11 @@ export default function Experience() {
   return (
     <div className="relative flex flex-col items-center py-10 bg-black min-h-screen text-white px-5">
       <div className="w-full max-w-xl space-y-6 relative">
-        {/* Contenedor del título y la línea del tiempo */}
         <Card className="bg-black border border-gray-700 p-6">
           <CardHeader>
             <CardTitle className="text-2xl text-white text-center">
-            {t.experience.title}{" "}
+              {t.experience.title}{" "}
             </CardTitle>
-            {/* Chips de tecnologías */}
             <div className="flex flex-wrap gap-2 justify-center pt-5">
               {[
                 "Typescript",

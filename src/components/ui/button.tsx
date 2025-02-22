@@ -44,7 +44,6 @@ const Button = React.forwardRef<
   HTMLButtonElement & HTMLAnchorElement,
   ButtonProps
 >(({ className, variant, size, asChild = false, downloadUrl, ...props }, ref) => {
-  // Determina el componente dinámico
   const Comp: React.ElementType =
     asChild ? Slot : downloadUrl ? "a" : "button";
 

@@ -1,24 +1,21 @@
-/* Genel stil */
 .toggle_switch {
     position: relative;
     display: inline-block;
-    width: 30px; /* Reducido */
-    height: 18px; /* Reducido */
-    margin: 5px 0px; /* Ajuste para mantener el espaciado */
+    width: 30px; 
+    height: 18px; 
+    margin: 5px 0px;
   }
   
-  /* Giriş stil */
   .toggle_switch .toggle_input {
     display: none;
   }
   
-  /* Anahtarın stilinin etrafındaki etiketin stil */
   .toggle_switch .toggle_label {
     position: absolute;
     top: 0;
     left: 0;
-    width: 30px; /* Reducido */
-    height: 18px; /* Reducido */
+    width: 30px;
+    height: 18px; 
     background-color: #acacac;
     border-radius: 34px;
     cursor: none;
@@ -26,12 +23,11 @@
     cursor: pointer;
   }
   
-  /* Anahtarın yuvarlak kısmının stil */
   .toggle_switch .toggle_label::before {
     content: "";
     position: absolute;
-    width: 14px; /* Reducido */
-    height: 14px; /* Reducido */
+    width: 14px; 
+    height: 14px; 
     border-radius: 50%;
     top: 2px;
     left: 2px;
@@ -41,16 +37,14 @@
     
   }
   
-  /* Anahtarın etkin hale gelmesindeki stil değişiklikleri */
   .toggle_switch .toggle_input:checked + .toggle_label {
     background-color: #10b981;
   }
   
   .toggle_switch .toggle_input:checked + .toggle_label::before {
-    transform: translateX(12px); /* Ajuste del movimiento */
+    transform: translateX(12px); 
   }
   
-  /* Light tema */
   .toggle_switch.light .toggle_label {
     background-color: #bebebe;
   }
@@ -60,10 +54,9 @@
   }
   
   .toggle_switch.light .toggle_input:checked + .toggle_label::before {
-    transform: translateX(4px); /* Ajuste del movimiento */
+    transform: translateX(4px); 
   }
   
-  /* Dark tema */
   .toggle_switch.dark .toggle_label {
     background-color: #4b4b4b;
   }
@@ -73,39 +66,36 @@
   }
   
   .toggle_switch.dark .toggle_input:checked + .toggle_label::before {
-    transform: translateX(12px); /* Ajuste del movimiento */
+    transform: translateX(12px); 
   }
   
-  /* Ajuste del tamaño para pantallas mayores a 628px */
   @media (max-width: 628px) {
     .toggle_switch {
-      width: 40px; /* Aumentado */
-      height: 22px; /* Aumentado */
+      width: 40px; 
+      height: 22px; 
     }
   
     .toggle_switch .toggle_label {
-      width: 40px; /* Aumentado */
-      height: 22px; /* Aumentado */
+      width: 40px; 
+      height: 22px; 
     }
   
     .toggle_switch .toggle_label::before {
-      width: 18px; /* Aumentado */
-      height: 18px; /* Aumentado */
+      width: 18px; 
+      height: 18px; 
       top: 2px;
       left: 2px;
     }
   
     .toggle_switch .toggle_input:checked + .toggle_label::before {
-      transform: translateX(18px); /* Ajuste del movimiento */
+      transform: translateX(18px); 
     }
   
-    /* Light tema */
     .toggle_switch.light .toggle_input:checked + .toggle_label::before {
-      transform: translateX(6px); /* Ajuste del movimiento */
+      transform: translateX(6px); /
     }
   
-    /* Dark tema */
     .toggle_switch.dark .toggle_input:checked + .toggle_label::before {
-      transform: translateX(18px); /* Ajuste del movimiento */
+      transform: translateX(18px); 
     }
   }
