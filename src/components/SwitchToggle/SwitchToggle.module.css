@@ -92,10 +92,10 @@
     }
   
     .toggle_switch.light .toggle_input:checked + .toggle_label::before {
-      transform: translateX(6px); /
+      transform: translateX(6px);
     }
   
     .toggle_switch.dark .toggle_input:checked + .toggle_label::before {
-      transform: translateX(18px); 
+      transform: translateX(18px);
     }
   }
