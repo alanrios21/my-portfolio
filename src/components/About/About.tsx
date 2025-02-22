@@ -30,6 +30,7 @@ import {
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import { useTranslation } from "@/Hooks/useTranslation";
 
 const techStack = [
   { name: "React", icon: <FaReact className="text-blue-400 text-4xl" /> },
@@ -61,6 +62,7 @@ const techStack = [
 
 const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
   (props, ref) => {
+    const t = useTranslation();
     return (
       <div
         ref={ref}
@@ -82,23 +84,17 @@ const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
 
             <div className="sm:ml-6 mt-4 sm:mt-0 text-white">
               <CardHeader>
-                <CardTitle className="text-lg sm:text-2xl">Sobre mí</CardTitle>
+                <CardTitle className="text-lg sm:text-2xl">
+                  {t.aboutMe.title}{" "}
+                </CardTitle>
                 <CardDescription className="text-gray-400 text-sm sm:text-lg">
-                  ¡Hola, mi nombre es Alan!
+                  {t.aboutMe.paragraph_1}{" "}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm sm:text-lg">
-                  Soy Desarrollador de Software. Me considero una persona
-                  creativa, innovadora con capacidad de liderazgo. Actualmente
-                  estoy buscando nuevos desafíos para crear soluciones que
-                  impacten a los usuarios. Estoy interesado en trabajar con
-                  proyectos que involucren comercio electrónico y que ofrecen
-                  servicios financieros pero no me cierro a la idea de
-                  participar en productos de otros rubros.
-                </p>
+                <p className="text-sm sm:text-lg">{t.aboutMe.paragraph_2} </p>
                 <p className="mt-4 text-sm sm:text-lg">
-                  Pueden contactarme a través de mis redes sociales
+                  {t.aboutMe.paragraph_3}{" "}
                 </p>
                 <div className="mt-6 flex space-x-6">
                   <a

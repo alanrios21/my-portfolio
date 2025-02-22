@@ -3,98 +3,11 @@
 import { useState } from "react";
 import { FaChevronDown, FaStar } from "react-icons/fa";
 import { Card, CardHeader, CardTitle } from "../ui/card";
-
-const experiences = [
-  {
-    title: "Mentor Full Stack - InnovaTeam",
-    duration: "Sept. 2024 - Feb. 2025 (6 meses)",
-    tasks: [
-      "Explicar teorías e implementar mediante prácticas las bases de programación.",
-      "Enseñar mejores prácticas de codificación y documentación de tareas de desarrollo.",
-    ],
-  },
-  {
-    title: "Desarrollador Full Stack - AWESOME.AR",
-    duration: "Dic. 2023 - Sept. 2024 (10 meses)",
-    clients: [
-      {
-        name: "Balance Nutrition",
-        tasks: [
-          "Implementar un carrito de compras para que los usuarios puedan adquirir fácilmente los alimentos recomendados junto con los detalles de las recetas.",
-          "Diseñar e integrar funcionalidades de navegación y visualización de recetas saludables.",
-        ],
-      },
-      {
-        name: "Visiona Grupo",
-        tasks: [
-          "Implementar servicios backend robustos para el manejo eficiente de productos.",
-          "Diseñar APIs escalables para sincronizar y actualizar datos en tiempo real.",
-        ],
-      },
-      {
-        name: "Apolo Rocket",
-        tasks: [
-          "Diseñar e implementar módulos interactivos para la visualización y gestión de datos genéticos.",
-          "Automatizar flujos de trabajo para mejorar la eficiencia en la comparación de información genética.",
-        ],
-      },
-    ],
-  },
-  {
-    title: "Desarrollador Full Stack - AYIGROUP",
-    duration: "Abr. 2021 - Oct. 2023 (2 años 7 meses)",
-    clients: [
-      {
-        name: "Registro Civil",
-        tasks: [
-          "Implementar funcionalidades para consultas, trámites y reclamos en un entorno 100 % online.",
-          "Optimizar la experiencia del usuario en la plataforma, disponible las 24 horas y desde cualquier dispositivo.",
-          "Contribuir a la digitalización y automatización de las mesas de entrada provinciales, reduciendo costos y promoviendo la sustentabilidad.",
-        ],
-      },
-      {
-        name: "Rentas",
-        tasks: [
-          "Crear funcionalidades para administrar créditos fiscales.",
-          "Diseñar una experiencia de usuario intuitiva y optimizada para dispositivos móviles.",
-        ],
-      },
-      {
-        name: "Interconomy",
-        tasks: [
-          "Diseñar un sistema seguro y transparente para enviar, recibir y administrar valores dentro de un ecosistema de confianza.",
-          "Implementar funcionalidades para la personalización de tokens y la optimización de circuitos de intercambio entre empresas e instituciones.",
-        ],
-      },
-      {
-        name: "Sitio web de la empresa",
-        tasks: [
-          "Diseñar una interfaz atractiva y funcional enfocada en la experiencia del usuario.",
-          "Implementar funcionalidades que resaltan los servicios y productos de la empresa.",
-        ],
-      },
-      {
-        name: "Moodle y OnBoarding",
-        tasks: [
-          "Implementar un sistema de gestión de cursos con herramientas interactivas para las escuelitas de la empresa.",
-          "Diseñar un flujo de onboarding intuitivo para facilitar la incorporación de nuevos empleados.",
-        ],
-      },
-    ],
-  },
-  {
-    title: "Desarrollador Full Stack - TYCON",
-    duration: "Feb. 2020 - Oct. 2020 (9 meses)",
-    tasks: [
-      "Desarrollar una plataforma de ecommerce para un cliente interno, optimizando la gestión de ventas y productos en línea.",
-      "Implementar funcionalidades para el catálogo de productos, carrito de compras y pasarela de pagos.",
-      "Diseñar un sistema escalable para la administración de inventarios y pedidos en tiempo real.",
-      "Garantizar una experiencia de usuario fluida y segura para la compra en línea.",
-    ],
-  },
-];
+import { useTranslation } from "@/Hooks/useTranslation";
 
 export default function Experience() {
+  const t = useTranslation(); 
+  const experiences = t.experience?.experiences || []; 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
@@ -108,7 +21,7 @@ export default function Experience() {
         <Card className="bg-black border border-gray-700 p-6">
           <CardHeader>
             <CardTitle className="text-2xl text-white text-center">
-              Mi experiencia
+            {t.experience.title}{" "}
             </CardTitle>
             {/* Chips de tecnologías */}
             <div className="flex flex-wrap gap-2 justify-center pt-5">

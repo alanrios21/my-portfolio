@@ -4,9 +4,11 @@ import { FaEnvelope } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from '@/Hooks/useTranslation';
 
 const GmailButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const t = useTranslation();
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -57,14 +59,14 @@ const GmailButton = () => {
             >
               ✖
             </motion.button>
-            <h2 className="text-[15px] mt-3 font-semibold">¿Quieres contactarme?</h2>
-            <p className="text-[13px] text-gray-600 mt-2">Puedes enviarme un correo electrónico.</p>
+            <h2 className="text-[15px] mt-5 font-semibold">{t.contactModal.title}{" "}</h2>
+            <p className="text-[13px] text-gray-600 mt-2">{t.contactModal.description}{" "}</p>
             <div className="mt-4 flex justify-center">
               <button
                 onClick={handleOpenGmail}
                 className="flex items-center bg-red-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-red-600 transition-all text-sm"
               >
-                <SiGmail size={20} className="mr-2 mb-0.5" /> Abrir Gmail
+                <SiGmail size={20} className="mr-2 mb-0.5" /> {t.contactModal.openGmail}{" "}
               </button>
             </div>
           </motion.div>
