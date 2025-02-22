@@ -5,6 +5,8 @@ import { IoMdClose } from "react-icons/io";
 import LaunchUI from "@/components/logos/launch-ui";
 import gsap from "gsap";
 import "./navbar.css";
+import ButtonLanguague from "../BtnLanguaje/BtnLanguaje";
+import { useTranslation } from "@/Hooks/useTranslation";
 
 interface RefProps {
   homeRef: MutableRefObject<HTMLDivElement | null>;
@@ -61,6 +63,8 @@ export default function NavbarComponent({
     if (!isAnimating) setIsOpen(false);
   };
 
+  const t = useTranslation();
+
   const scrollTo = (ref: MutableRefObject<HTMLDivElement | null>) => {
     if (ref?.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
@@ -71,16 +75,17 @@ export default function NavbarComponent({
   return (
     <header className="navbar">
       <div className="flex items-center">
+        <ButtonLanguague />
         <button onClick={() => scrollTo(homeRef)} className="text-xl font-bold text-white">
           <LaunchUI />
         </button>
       </div>
 
       <nav className="navbar-menu">
-        <div onClick={() => scrollTo(homeRef)} className="navbar-item">Inicio</div>
-        <div onClick={() => scrollTo(aboutRef)} className="navbar-item">Sobre mí</div>
-        <div onClick={() => scrollTo(experienceRef)} className="navbar-item">Mi experiencia</div>
-        <div onClick={() => scrollTo(projectsRef)} className="navbar-item">Mis proyectos</div>
+        <div onClick={() => scrollTo(homeRef)} className="navbar-item"> {t.navbar.home}{" "}</div>
+        <div onClick={() => scrollTo(aboutRef)} className="navbar-item">{t.navbar.about}{" "}</div>
+        <div onClick={() => scrollTo(experienceRef)} className="navbar-item">{t.navbar.experience}{" "}</div>
+        <div onClick={() => scrollTo(projectsRef)} className="navbar-item">{t.navbar.projects}{" "}</div>
       </nav>
 
       {/* Botón de menú hamburguesa */}
@@ -98,10 +103,10 @@ export default function NavbarComponent({
         <button className="close-button" onClick={closeMenu}>
           <IoMdClose className="h-6 w-6 text-black" />
         </button>
-        <button onClick={() => scrollTo(homeRef)} className="sidebar-button mt-10">Inicio</button>
-        <button onClick={() => scrollTo(aboutRef)} className="sidebar-button">Sobre mí</button>
-        <button onClick={() => scrollTo(experienceRef)} className="sidebar-button">Mi experiencia</button>
-        <button onClick={() => scrollTo(projectsRef)} className="sidebar-button">Mis proyectos</button>
+        <button onClick={() => scrollTo(homeRef)} className="sidebar-button mt-10">{t.navbar.home}{" "}</button>
+        <button onClick={() => scrollTo(aboutRef)} className="sidebar-button">{t.navbar.about}{" "}</button>
+        <button onClick={() => scrollTo(experienceRef)} className="sidebar-button">{t.navbar.experience}{" "}</button>
+        <button onClick={() => scrollTo(projectsRef)} className="sidebar-button">{t.navbar.projects}{" "}</button>
       </div>
     </header>
   );
