@@ -1,6 +1,8 @@
 "use client";
 
-import { forwardRef } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { forwardRef, useEffect } from "react";
 import Image from "next/image";
 import {
   Card,
@@ -63,10 +65,20 @@ const techStack = [
 const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
   (props, ref) => {
     const t = useTranslation();
+
+    useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+      });
+    }, []);
+
     return (
       <div
         ref={ref}
         {...props}
+        data-aos="fade-right"
         className="w-full bg-black text-white flex flex-col items-center py-20"
       >
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-[1fr] gap-8 px-6">
@@ -77,7 +89,7 @@ const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
                 alt="Perfil"
                 width={450}
                 height={450}
-                style={{ objectFit: "cover" }} 
+                style={{ objectFit: "cover" }}
                 className="rounded-2xl shadow-lg"
               />
             </div>

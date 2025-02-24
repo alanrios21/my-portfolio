@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaChevronDown, FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle } from "../ui/card";
 import { useTranslation } from "@/Hooks/useTranslation";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface ExperienceProps {
   onToggle: (height: number) => void;
@@ -20,6 +22,14 @@ export default function Experience({
   const t = useTranslation();
   const experiences = t.experience?.experiences || [];
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
 
   const toggleAccordion = (index: number) => {
     const isOpening = activeIndex !== index;
@@ -39,13 +49,16 @@ export default function Experience({
         setActiveHeight(0);
         onClose();
         onToggle(0);
-      }, 300);
+      }, 350);
       setActiveIndex(null);
     }
   };
 
   return (
-    <div className="relative flex flex-col items-center py-10 bg-black text-white px-5 z-50">
+    <div
+      className="relative flex flex-col items-center bg-black text-white px-5 z-50"
+      data-aos="fade-left"
+    >
       <div className="w-full max-w-xl space-y-6 relative">
         <Card className="bg-black border border-gray-700 p-6">
           <CardHeader>
@@ -107,7 +120,7 @@ export default function Experience({
                   </button>
 
                   <motion.div
-                    id={`accordion-content-${index}`} 
+                    id={`accordion-content-${index}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={
                       activeIndex === index
@@ -118,7 +131,7 @@ export default function Experience({
                     className="overflow-hidden"
                     onAnimationComplete={() => {
                       if (activeIndex === null) {
-                        setActiveHeight(0); 
+                        setActiveHeight(0);
                       }
                     }}
                   >

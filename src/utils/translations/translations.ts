@@ -9,7 +9,7 @@ export const translations = {
         {
           id: 1,
           title: "Aplicación Genoma y Especies",
-          btnProject: "Ver Proyecto.",
+          btnProject: "Ver Proyecto",
           image: "/gifs/Awesome-ApoloRocket.gif",
           url: "https://www.youtube.com/watch?v=ec8mhtxr9LE",
           technologies: ["React", "Nest", "MySQL", "TypeOrm", "Zustand"],
@@ -17,7 +17,7 @@ export const translations = {
         {
           id: 2,
           title: "Sistema de Ventas",
-          btnProject: "Ver Proyecto.",
+          btnProject: "Ver Proyecto",
           image: "/gifs/Visiona-Group.gif",
           url: "https://www.youtube.com/watch?v=pShcB1XfnKs",
           technologies: ["React", "Nest", "PostgreSQL", "TypeOrm", "Zustand"],
@@ -25,7 +25,7 @@ export const translations = {
         {
           id: 3,
           title: "Panel Ecommerce",
-          btnProject: "Ver Proyecto.",
+          btnProject: "Ver Proyecto",
           image: "/gifs/Ecommerce-Panel.gif",
           url: "https://www.youtube.com/watch?v=LpCY1uHHQd8",
           technologies: ["React", "Node", "Express", "Redux", "MySQL"],
@@ -33,7 +33,7 @@ export const translations = {
         {
           id: 4,
           title: "Aplicación de Salud",
-          btnProject: "Ver Proyecto.",
+          btnProject: "Ver Proyecto",
           image: "/gifs/Hackaton-Justina.gif",
           url: "https://www.youtube.com/watch?v=FVfbtmy1ywc",
           technologies: ["React", "Nest", "PostgreSQL", "TypeOrm", "Zustand"],
@@ -173,7 +173,7 @@ export const translations = {
         {
           id: 1,
           title: "Genome and Species Application",
-          btnProject: "See Project.",
+          btnProject: "See Project",
           image: "/gifs/Awesome-ApoloRocket.gif",
           url: "https://www.youtube.com/watch?v=ec8mhtxr9LE",
           technologies: ["React", "Nest", "MySQL", "TypeOrm", "Zustand"],
@@ -181,7 +181,7 @@ export const translations = {
         {
           id: 2,
           title: "Sales System",
-          btnProject: "See Project.",
+          btnProject: "See Project",
           image: "/gifs/Visiona-Group.gif",
           url: "https://www.youtube.com/watch?v=pShcB1XfnKs",
           technologies: ["React", "Nest", "PostgreSQL", "TypeOrm", "Zustand"],
@@ -189,7 +189,7 @@ export const translations = {
         {
           id: 3,
           title: "Ecommerce Panel",
-          btnProject: "See Project.",
+          btnProject: "See Project",
           image: "/gifs/Ecommerce-Panel.gif",
           url: "https://www.youtube.com/watch?v=LpCY1uHHQd8",
           technologies: ["React", "Node", "Express", "Redux", "MySQL"],
@@ -197,7 +197,7 @@ export const translations = {
         {
           id: 4,
           title: "Health Application",
-          btnProject: "See Project.",
+          btnProject: "See Project",
           image: "/gifs/Hackaton-Justina.gif",
           url: "https://www.youtube.com/watch?v=FVfbtmy1ywc",
           technologies: ["React", "Nest", "PostgreSQL", "TypeOrm", "Zustand"],
