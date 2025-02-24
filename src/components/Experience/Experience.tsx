@@ -56,7 +56,7 @@ export default function Experience({
 
   return (
     <div
-      className="relative flex flex-col items-center bg-black text-white px-5 z-50"
+      className="relative flex flex-col items-center -mt-8 sm:mt-20 bg-black text-white px-5 z-50"
       data-aos="fade-left"
     >
       <div className="w-full max-w-xl space-y-6 relative">

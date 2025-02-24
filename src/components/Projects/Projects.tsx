@@ -21,8 +21,8 @@ export default function Projects({ contentHeight }: ProjectsProps) {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 388) {
-        setDynamicMargin(contentHeight + 160); // Ajusta el margin-top cuando es menor a 476px
+      if (window.innerWidth <= 446) {
+        setDynamicMargin(contentHeight + 200); // Ajusta el margin-top cuando es menor a 476px
       } else {
         setDynamicMargin(contentHeight); // Mantiene el valor original si es mayor a 476px
       }
@@ -47,7 +47,7 @@ export default function Projects({ contentHeight }: ProjectsProps) {
   return (
     <><section
       data-aos="fade-down"
-      className="relative flex flex-col items-center pt-16 bg-black min-h-auto text-white px-5 z-10"
+      className="relative flex flex-col items-center pt-2 bg-black min-h-auto text-white px-5 z-10"
       style={{ marginTop: dynamicMargin }}
     >
       <h2 className="text-lg sm:text-2xl font-bold mb-8 text-white">
