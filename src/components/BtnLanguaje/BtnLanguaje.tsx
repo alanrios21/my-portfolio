@@ -1,4 +1,5 @@
 "use client";
+
 import Translate from "@/assets/Translate";
 import styles from "./BtnLanguague.module.css";
 import Modal from "../Modal/Modal";

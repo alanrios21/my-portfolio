@@ -1,0 +1,11 @@
+@media (max-width: 398px) {
+  .box-projects {
+    margin-top: 150px !important;
+  }
+}
+
+@media (max-width: 333px) {
+  .box-projects {
+    margin-top: 220px !important;
+  }
+}
