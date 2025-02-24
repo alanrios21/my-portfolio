@@ -4,14 +4,13 @@ import { ReactNode } from "react";
 
 interface ModalProps {
   isModalOpen: boolean;
-  onClose: () => void;
   children: ReactNode;
 }
 
-const Modal = ({ isModalOpen, onClose, children }: ModalProps) => {
+const Modal = ({ isModalOpen, children }: ModalProps) => {
   if (!isModalOpen) return null;
   return createPortal(
-    <div className={`${styles.overlay} z-50 bg-white`} onClick={onClose}>
+    <div className={`${styles.overlay} z-50 bg-white`}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         {children}
       </div>

@@ -77,7 +77,7 @@ const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
                 alt="Perfil"
                 width={450}
                 height={450}
-                objectFit="cover"
+                style={{ objectFit: "cover" }} 
                 className="rounded-2xl shadow-lg"
               />
             </div>

@@ -78,18 +78,34 @@ export default function NavbarComponent({
       </div>
 
       <nav className="navbar-menu">
-        <div onClick={() => scrollTo(homeRef)} className="navbar-item"> {t.navbar.home}{" "}</div>
-        <div onClick={() => scrollTo(aboutRef)} className="navbar-item">{t.navbar.about}{" "}</div>
-        <div onClick={() => scrollTo(experienceRef)} className="navbar-item">{t.navbar.experience}{" "}</div>
-        <div onClick={() => scrollTo(projectsRef)} className="navbar-item">{t.navbar.projects}{" "}</div>
+        <div onClick={() => scrollTo(homeRef)} className="navbar-item">
+          {" "}
+          {t.navbar.home}{" "}
+        </div>
+        <div onClick={() => scrollTo(aboutRef)} className="navbar-item">
+          {t.navbar.about}{" "}
+        </div>
+        <div onClick={() => scrollTo(experienceRef)} className="navbar-item">
+          {t.navbar.experience}{" "}
+        </div>
+        <div onClick={() => scrollTo(projectsRef)} className="navbar-item">
+          {t.navbar.projects}{" "}
+        </div>
       </nav>
 
-      <button
-        className={`menu-button ${isOpen ? "fixed" : ""}`}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
+        <svg
+          className="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
         </svg>
       </button>
 
@@ -97,10 +113,27 @@ export default function NavbarComponent({
         <button className="close-button" onClick={closeMenu}>
           <IoMdClose className="h-6 w-6 text-black" />
         </button>
-        <button onClick={() => scrollTo(homeRef)} className="sidebar-button mt-10">{t.navbar.home}{" "}</button>
-        <button onClick={() => scrollTo(aboutRef)} className="sidebar-button">{t.navbar.about}{" "}</button>
-        <button onClick={() => scrollTo(experienceRef)} className="sidebar-button">{t.navbar.experience}{" "}</button>
-        <button onClick={() => scrollTo(projectsRef)} className="sidebar-button">{t.navbar.projects}{" "}</button>
+        <button
+          onClick={() => scrollTo(homeRef)}
+          className="sidebar-button mt-10"
+        >
+          {t.navbar.home}{" "}
+        </button>
+        <button onClick={() => scrollTo(aboutRef)} className="sidebar-button">
+          {t.navbar.about}{" "}
+        </button>
+        <button
+          onClick={() => scrollTo(experienceRef)}
+          className="sidebar-button"
+        >
+          {t.navbar.experience}{" "}
+        </button>
+        <button
+          onClick={() => scrollTo(projectsRef)}
+          className="sidebar-button"
+        >
+          {t.navbar.projects}{" "}
+        </button>
       </div>
     </header>
   );

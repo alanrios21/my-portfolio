@@ -3,6 +3,44 @@ export const translations = {
     language: {
       changeLanguege: "Idioma",
     },
+    projects: {
+      title: "Mis Proyectos",
+      projectList: [
+        {
+          id: 1,
+          title: "Aplicación Genoma y Especies",
+          btnProject: "Ver Proyecto.",
+          image: "/gifs/Awesome-ApoloRocket.gif",
+          url: "https://www.youtube.com/watch?v=ec8mhtxr9LE",
+          technologies: ["React", "Nest", "MySQL", "TypeOrm", "Zustand"],
+        },
+        {
+          id: 2,
+          title: "Sistema de Ventas",
+          btnProject: "Ver Proyecto.",
+          image: "/gifs/Visiona-Group.gif",
+          url: "https://www.youtube.com/watch?v=pShcB1XfnKs",
+          technologies: ["React", "Nest", "PostgreSQL", "TypeOrm", "Zustand"],
+        },
+        {
+          id: 3,
+          title: "Panel Ecommerce",
+          btnProject: "Ver Proyecto.",
+          image: "/gifs/Ecommerce-Panel.gif",
+          url: "https://www.youtube.com/watch?v=LpCY1uHHQd8",
+          technologies: ["React", "Node", "Express", "Redux", "MySQL"],
+        },
+        {
+          id: 4,
+          title: "Aplicación de Salud",
+          btnProject: "Ver Proyecto.",
+          image: "/gifs/Hackaton-Justina.gif",
+          url: "https://www.youtube.com/watch?v=FVfbtmy1ywc",
+          technologies: ["React", "Nest", "PostgreSQL", "TypeOrm", "Zustand"],
+        },
+      ],
+    },
+
     home: {
       title: "Desarrollador Full Stack",
       subtitle:
@@ -14,8 +52,7 @@ export const translations = {
       paragraph_1: "¡Hola! Mi nombre es Alan Rios!",
       paragraph_2:
         "Soy Desarrollador de Software. Me considero una persona creativa, innovadora con capacidad de liderazgo. Actualmente estoy buscando nuevos desafíos para crear soluciones que impacten a los usuarios. Estoy interesado en trabajar con proyectos que involucren comercio electrónico y que ofrecen servicios financieros pero no me cierro a la idea de participar en productos de otros rubros.",
-      paragraph_3:
-        "Pueden seguirme a través de mis redes sociales",
+      paragraph_3: "Pueden seguirme a través de mis redes sociales",
     },
     navbar: {
       home: "Inicio",
@@ -130,14 +167,49 @@ export const translations = {
       subtitle: "Technology must be built from functionality and innovation",
       downloadCV: "Download CV",
     },
+    projects: {
+      title: "My Projects",
+      projectList: [
+        {
+          id: 1,
+          title: "Genome and Species Application",
+          btnProject: "See Project.",
+          image: "/gifs/Awesome-ApoloRocket.gif",
+          url: "https://www.youtube.com/watch?v=ec8mhtxr9LE",
+          technologies: ["React", "Nest", "MySQL", "TypeOrm", "Zustand"],
+        },
+        {
+          id: 2,
+          title: "Sales System",
+          btnProject: "See Project.",
+          image: "/gifs/Visiona-Group.gif",
+          url: "https://www.youtube.com/watch?v=pShcB1XfnKs",
+          technologies: ["React", "Nest", "PostgreSQL", "TypeOrm", "Zustand"],
+        },
+        {
+          id: 3,
+          title: "Ecommerce Panel",
+          btnProject: "See Project.",
+          image: "/gifs/Ecommerce-Panel.gif",
+          url: "https://www.youtube.com/watch?v=LpCY1uHHQd8",
+          technologies: ["React", "Node", "Express", "Redux", "MySQL"],
+        },
+        {
+          id: 4,
+          title: "Health Application",
+          btnProject: "See Project.",
+          image: "/gifs/Hackaton-Justina.gif",
+          url: "https://www.youtube.com/watch?v=FVfbtmy1ywc",
+          technologies: ["React", "Nest", "PostgreSQL", "TypeOrm", "Zustand"],
+        },
+      ],
+    },
     aboutMe: {
       title: "About Me",
       paragraph_1: "Hi! I'm Alan Ríos",
       paragraph_2:
         "I am a Software Developer. I consider myself a creative, innovative person with leadership skills. I am currently looking for new challenges to create solutions that impact users. I am interested in working with projects that involve electronic commerce and that offer financial services but I am not closed to the idea of ​​​​participating in products from other areas.",
-      paragraph_3:
-        "You can follow me through my social networks",
-      
+      paragraph_3: "You can follow me through my social networks",
     },
     navbar: {
       home: "Home",

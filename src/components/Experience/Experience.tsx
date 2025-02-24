@@ -2,25 +2,55 @@
 
 import { useState } from "react";
 import { FaChevronDown, FaStar } from "react-icons/fa";
+import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle } from "../ui/card";
 import { useTranslation } from "@/Hooks/useTranslation";
 
-export default function Experience() {
+interface ExperienceProps {
+  onToggle: (height: number) => void;
+  setActiveHeight: (height: number) => void;
+  onClose: () => void;
+}
+
+export default function Experience({
+  onToggle,
+  setActiveHeight,
+  onClose,
+}: ExperienceProps) {
   const t = useTranslation();
   const experiences = t.experience?.experiences || [];
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    const isOpening = activeIndex !== index;
+
+    if (isOpening) {
+      const contentElement = document.getElementById(
+        `accordion-content-${index}`
+      );
+      if (contentElement) {
+        const height = contentElement.scrollHeight;
+        setActiveHeight(height);
+        onToggle(height);
+      }
+      setActiveIndex(index);
+    } else {
+      setTimeout(() => {
+        setActiveHeight(0);
+        onClose();
+        onToggle(0);
+      }, 300);
+      setActiveIndex(null);
+    }
   };
 
   return (
-    <div className="relative flex flex-col items-center py-10 bg-black min-h-screen text-white px-5">
+    <div className="relative flex flex-col items-center py-10 bg-black text-white px-5 z-50">
       <div className="w-full max-w-xl space-y-6 relative">
         <Card className="bg-black border border-gray-700 p-6">
           <CardHeader>
             <CardTitle className="text-2xl text-white text-center">
-              {t.experience.title}{" "}
+              {t.experience.title}
             </CardTitle>
             <div className="flex flex-wrap gap-2 justify-center pt-5">
               {[
@@ -58,7 +88,7 @@ export default function Experience() {
 
                 <div className="flex-1 ml-8 z-50">
                   <button
-                    className="flex justify-between sm items-center w-full px-5 py-4 rounded-lg transition-all duration-300 focus:outline-none"
+                    className="flex justify-between items-center w-full px-5 py-4 rounded-lg transition-all duration-300 focus:outline-none"
                     onClick={() => toggleAccordion(index)}
                   >
                     <div className="text-left">
@@ -76,39 +106,50 @@ export default function Experience() {
                     />
                   </button>
 
-                  <div
-                    className={`${
+                  <motion.div
+                    id={`accordion-content-${index}`} 
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={
                       activeIndex === index
-                        ? "opacity-100 max-h-100 py-2 transition-all duration-500 ease-in-out"
-                        : "opacity-0 max-h-0"
-                    } overflow-hidden`}
+                        ? { height: "auto", opacity: 1 }
+                        : { height: 0, opacity: 0 }
+                    }
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                    onAnimationComplete={() => {
+                      if (activeIndex === null) {
+                        setActiveHeight(0); 
+                      }
+                    }}
                   >
-                    {exp.clients ? (
-                      exp.clients.map((client, i) => (
-                        <div key={i} className="px-5 text-gray-300">
-                          <span className="font-semibold text-[14px] sm:text-[16px] pt-2 pb-2 block">
-                            {client.name}
-                          </span>
+                    <div className="px-5 text-gray-300 py-2">
+                      {exp.clients ? (
+                        exp.clients.map((client, i) => (
+                          <div key={i}>
+                            <span className="font-semibold text-[14px] sm:text-[16px] pt-2 pb-2 block">
+                              {client.name}
+                            </span>
 
-                          <ul className="list-none text-[13px] sm:text-[16px]">
-                            {client.tasks.map((task, j) => (
-                              <li key={j} className="flex items-start mb-1">
-                                {task}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))
-                    ) : (
-                      <ul className="px-5 text-gray-300 list-none text-[13px] sm:text-[16px]">
-                        {exp.tasks.map((task, i) => (
-                          <li key={i} className="flex items-start mb-1">
-                            {task}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
+                            <ul className="list-none text-[13px] sm:text-[16px]">
+                              {client.tasks.map((task, j) => (
+                                <li key={j} className="flex items-start mb-1">
+                                  {task}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))
+                      ) : (
+                        <ul className="list-none text-[13px] sm:text-[16px]">
+                          {exp.tasks.map((task, i) => (
+                            <li key={i} className="flex items-start mb-1">
+                              {task}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </motion.div>
                 </div>
               </div>
             ))}

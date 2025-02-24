@@ -7,14 +7,18 @@ import { useLanguageStore } from "@/app/store/store";
 import { useTranslation } from "@/Hooks/useTranslation";
 import SwitchToggle from "../SwitchToggle/SwitchToggle";
 import { buttonTranslateAnimate } from "@/utils/animationGsap/AnimationGsap";
+import { motion } from "framer-motion";
 
 const ButtonLanguague = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
+
   const t = useTranslation();
   const buttonTranslateRef = useRef<HTMLDivElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
-  const { toggleLanguage, language } = useLanguageStore() as { toggleLanguage: () => void; language: string };
+  const { toggleLanguage, language } = useLanguageStore() as {
+    toggleLanguage: () => void;
+    language: string;
+  };
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -49,26 +53,31 @@ const ButtonLanguague = () => {
         onClick={openModal}
         ref={buttonTranslateRef}
       >
-        <button aria-label="button-translate" className={styles.button}>
-          <Translate width="15px" height="15px" />
-        </button>
+        <motion.button
+          aria-label="button-translate"
+          className={styles.button}
+          whileHover={{ scale: 1.2 }}
+          transition={{ type: "spring", stiffness: 200, damping: 10 }}
+        >
+          <Translate width="18px" height="18px" className="btn-icon" />
+        </motion.button>
       </div>
       {isModalOpen && (
-        <Modal isModalOpen={isModalOpen} onClose={closeModal} >
-          <div className={styles.modal} ref={modalRef} >
+        <Modal isModalOpen={isModalOpen}>
+          <div className={styles.modal} ref={modalRef}>
             <span>
               {t.language.changeLanguege}{" "}
-              <button className={styles.closeButton} onClick={closeModal}>
+              <motion.button
+                className={`${styles.closeButton} hover:text-gray-700`}
+                onClick={closeModal}
+                whileHover={{ scale: 1.2 }}
+              >
                 &times;
-              </button>
+              </motion.button>
             </span>
 
             <div className={styles.toggle_container}>
-              <p style={{ color: "black" }}
-                
-              >
-                English
-              </p>
+              <p style={{ color: "black" }}>English</p>
               <SwitchToggle
                 id="toggle-en"
                 name="en"
@@ -78,16 +87,12 @@ const ButtonLanguague = () => {
             </div>
 
             <div className={styles.toggle_container}>
-              <p 
-                style={{ color: "black" }}
-              >
-                Español
-              </p>
+              <p style={{ color: "black" }}>Español</p>
               <SwitchToggle
                 id="toggle-es"
                 name="es"
                 checked={language === "es"}
-                onChange={() => language !== "es" && toggleLanguage() }
+                onChange={() => language !== "es" && toggleLanguage()}
               />
             </div>
           </div>

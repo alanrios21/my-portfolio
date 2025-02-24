@@ -2,7 +2,7 @@ const Translate = ({
     width = "20",
     height = "20",
     color = "white",
-    className = "",
+    className = "hover:scale-100",
   }) => (
     <svg
       stroke={color}

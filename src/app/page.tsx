@@ -6,6 +6,7 @@ import Experience from "@/components/Experience/Experience";
 import GmailButton from "@/components/GmailButton/GmailButton";
 import HomeContent from "@/components/Home/homeContent";
 import Navbar from "@/components/Navbar/navbar";
+import Projects from "@/components/Projects/Projects";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { useEffect, useRef, useState } from "react";
 
@@ -15,8 +16,19 @@ export default function Home() {
   const homeRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const [contentHeight, setContentHeight] = useState(0);
+
+  const handleToggle = (height: number) => {
+    setContentHeight(height);
+  };
+
+  const handleClose = () => {
+    setContentHeight(0);
+  };
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setShowBtnBackHome(!entry.isIntersecting);
@@ -24,24 +36,15 @@ export default function Home() {
       { root: null, threshold: 0.5 }
     );
 
-    const currentHomeRef = homeRef.current;
-    const currentAboutRef = aboutRef.current;
-    if (currentHomeRef) {
-      observer.observe(currentHomeRef);
-    }
+    const homeNode = homeRef.current;
+    const aboutNode = aboutRef.current;
 
-    else if (currentAboutRef) {
-      observer.observe(currentAboutRef);
-    }
+    if (homeNode) observer.observe(homeNode);
+    if (aboutNode) observer.observe(aboutNode);
 
     return () => {
-      if (currentHomeRef) {
-        observer.unobserve(currentHomeRef);
-      }
-
-      else if (currentAboutRef) {
-        observer.unobserve(currentAboutRef);
-      }
+      if (homeNode) observer.unobserve(homeNode);
+      if (aboutNode) observer.unobserve(aboutNode);
     };
   }, []);
 
@@ -65,7 +68,14 @@ export default function Home() {
         <About />
       </div>
       <div ref={experienceRef} className="h-screen">
-        <Experience />
+        <Experience
+          onToggle={handleToggle}
+          setActiveHeight={setContentHeight}
+          onClose={handleClose}
+        />
+      </div>
+      <div ref={projectsRef} className="h-100">
+        <Projects contentHeight={contentHeight} />
       </div>
       ¡{" "}
       <div
@@ -75,7 +85,7 @@ export default function Home() {
       >
         <BtnBackHome homeRef={homeRef} />
       </div>
-        <GmailButton/>
+      <GmailButton />
       {/* Shooting Stars */}
       <ShootingStars
         className="absolute inset-0"
