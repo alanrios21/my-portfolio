@@ -1,5 +1,8 @@
 export const translations = {
   es: {
+    footer: {
+      rights: "Todos los derechos reservados.",
+    },
     language: {
       changeLanguege: "Idioma",
     },
@@ -159,6 +162,9 @@ export const translations = {
     },
   },
   en: {
+    footer: {
+      rights: "All rights reserved.",
+    },
     language: {
       changeLanguege: "Language",
     },

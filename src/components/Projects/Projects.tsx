@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { AiFillEye } from "react-icons/ai";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Footer from "../Footer/Footer";
 
 interface ProjectsProps {
   contentHeight: number;
@@ -44,8 +45,8 @@ export default function Projects({ contentHeight }: ProjectsProps) {
   }, []);
 
   return (
-    <section
-    data-aos="fade-down"
+    <><section
+      data-aos="fade-down"
       className="relative flex flex-col items-center pt-16 bg-black min-h-auto text-white px-5 z-10"
       style={{ marginTop: dynamicMargin }}
     >
@@ -64,8 +65,7 @@ export default function Projects({ contentHeight }: ProjectsProps) {
               width={500}
               height={300}
               unoptimized
-              className="w-full h-40 object-cover"
-            />
+              className="w-full h-40 object-cover" />
             <div className="p-4 text-center">
               <h3 className="text-[16px] font-medium mb-2">{project.title} </h3>
               <div className="flex flex-wrap justify-center gap-2 mb-3">
@@ -89,6 +89,6 @@ export default function Projects({ contentHeight }: ProjectsProps) {
           </div>
         ))}
       </div>
-    </section>
+    </section><Footer /></>
   );
 }
