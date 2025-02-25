@@ -22,14 +22,23 @@ export default function Projects({ contentHeight }: ProjectsProps) {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 446) {
-        setDynamicMargin(contentHeight + 50);
-      } else {
-        setDynamicMargin(contentHeight);
+      const width = window.innerWidth;
+      let newMargin = contentHeight;
+
+      if (width <= 398) {
+        newMargin += 100;
+      } else if (width <= 446) {
+        newMargin += 50;
       }
+      if (width <= 341) {
+        newMargin += 120;
+      }
+
+      console.log("Dynamic Margin:", newMargin);
+      setDynamicMargin(newMargin);
     };
 
-    handleResize();
+    handleResize(); // Llama inicialmente
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -49,7 +58,7 @@ export default function Projects({ contentHeight }: ProjectsProps) {
     <>
       <section
         data-aos="fade-down"
-        className="relative box-projects flex flex-col items-center pt-2 bg-black min-h-auto text-white px-5 z-10"
+        className="relative box-projects flex flex-col items-center pt-2 bg-black h-full text-white px-5 z-10"
         style={{ marginTop: dynamicMargin }}
       >
         <h2 className="text-lg sm:text-2xl font-bold mb-8 text-white">

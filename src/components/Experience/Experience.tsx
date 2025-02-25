@@ -49,7 +49,7 @@ export default function Experience({
         setActiveHeight(0);
         onClose();
         onToggle(0);
-      }, 350);
+      }, 550);
       setActiveIndex(null);
     }
   };

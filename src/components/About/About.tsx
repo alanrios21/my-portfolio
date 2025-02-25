@@ -78,12 +78,14 @@ const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
       <div
         ref={ref}
         {...props}
-        data-aos="fade-right"
         className="w-full bg-black text-white flex flex-col items-center py-20"
       >
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-[1fr] gap-8 px-6">
           <Card className="w-full h-auto xl:h-[380px] lg:h-[420px] md:h-[480px] md:-ml-8 bg-black border border-gray-700 p-6 flex flex-col sm:flex-row items-center sm:items-start">
-            <div className="w-32 h-32 sm:w-[450px] sm:h-[450px] md:w-[450px] md:h-[450px]lg:w-[450px] lg:h-[450px] xl:w-[450px] xl:h-[450px] relative mb-5 sm:mb-0 md:mb-0">
+            <div
+              data-aos="fade-up-right"
+              className="w-32 h-32 sm:w-[450px] sm:h-[450px] md:w-[450px] md:h-[450px]lg:w-[450px] lg:h-[450px] xl:w-[450px] xl:h-[450px] relative mb-5 sm:mb-0 md:mb-0"
+            >
               <Image
                 src="/Profile.png"
                 alt="Perfil"
@@ -95,7 +97,7 @@ const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
             </div>
 
             <div className="sm:ml-6 mt-4 sm:mt-0 text-white">
-              <CardHeader>
+              <CardHeader data-aos="fade-up-right">
                 <CardTitle className="text-lg sm:text-2xl">
                   {t.aboutMe.title}{" "}
                 </CardTitle>
@@ -104,12 +106,14 @@ const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm sm:text-lg">{t.aboutMe.paragraph_2} </p>
-                <p className="mt-4 text-sm sm:text-lg">
-                  {t.aboutMe.paragraph_3}{" "}
-                </p>
+                <div data-aos="fade-up-right">
+                  <p className="text-sm sm:text-lg">{t.aboutMe.paragraph_2} </p>
+                  <p className="mt-4 text-sm sm:text-lg">
+                    {t.aboutMe.paragraph_3}{" "}
+                  </p>
+                </div>
                 <div className="mt-6 flex space-x-6">
-                  <a
+                  <a data-aos="fade-up-right"
                     href="https://github.com/alanrios21"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -118,7 +122,7 @@ const About = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
                     <FaGithub className="text-3xl" />
                     <span className="ml-2 text-sm sm:text-lg">GitHub</span>
                   </a>
-                  <a
+                  <a data-aos="fade-up-right"
                     href="https://www.linkedin.com/in/alan-rios/"
                     target="_blank"
                     rel="noopener noreferrer"
