@@ -6,6 +6,7 @@ import gsap from "gsap";
 import "./navbar.css";
 import ButtonLanguague from "../BtnLanguaje/BtnLanguaje";
 import { useTranslation } from "@/Hooks/useTranslation";
+import { HiMenuAlt3 } from "react-icons/hi";
 
 interface RefProps {
   homeRef: MutableRefObject<HTMLDivElement | null>;
@@ -25,8 +26,8 @@ export default function NavbarComponent({
   const sidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setIsAnimating(true);
     if (isOpen) {
-      setIsAnimating(true);
       gsap.fromTo(
         sidebarRef.current,
         { x: "100%" },
@@ -38,7 +39,6 @@ export default function NavbarComponent({
         }
       );
     } else {
-      setIsAnimating(true);
       gsap.to(sidebarRef.current, {
         x: "100%",
         duration: 0.1,
@@ -46,29 +46,22 @@ export default function NavbarComponent({
         onComplete: () => setIsAnimating(false),
       });
     }
-  }, [isOpen]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsOpen(false);
-      }
-    };
+    const handleResize = () => (window.innerWidth >= 768 ? setIsOpen(false) : null);
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [isOpen]);
 
-  const closeMenu = () => {
-    if (!isAnimating) setIsOpen(false);
-  };
+  const closeMenu = () => (!isAnimating ? setIsOpen(false) : null);
 
   const t = useTranslation();
 
   const scrollTo = (ref: MutableRefObject<HTMLDivElement | null>) => {
     if (ref?.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
-      closeMenu();
     }
+    closeMenu();
   };
 
   return (
@@ -79,60 +72,38 @@ export default function NavbarComponent({
 
       <nav className="navbar-menu">
         <div onClick={() => scrollTo(homeRef)} className="navbar-item">
-          {" "}
-          {t.navbar.home}{" "}
+          {t.navbar.home}
         </div>
         <div onClick={() => scrollTo(aboutRef)} className="navbar-item">
-          {t.navbar.about}{" "}
+          {t.navbar.about}
         </div>
         <div onClick={() => scrollTo(experienceRef)} className="navbar-item">
-          {t.navbar.experience}{" "}
+          {t.navbar.experience}
         </div>
         <div onClick={() => scrollTo(projectsRef)} className="navbar-item">
-          {t.navbar.projects}{" "}
+          {t.navbar.projects}
         </div>
       </nav>
 
       <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
-        <svg
-          className="h-5 w-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          ></path>
-        </svg>
+        <HiMenuAlt3 size={23} />
       </button>
 
       <div ref={sidebarRef} className={`sidebar z-50 ${isOpen ? "open" : ""}`}>
         <button className="close-button" onClick={closeMenu}>
           <IoMdClose className="h-6 w-6 text-black" />
         </button>
-        <button
-          onClick={() => scrollTo(homeRef)}
-          className="sidebar-button mt-10"
-        >
-          {t.navbar.home}{" "}
+        <button onClick={() => scrollTo(homeRef)} className="sidebar-button mt-10">
+          {t.navbar.home}
         </button>
         <button onClick={() => scrollTo(aboutRef)} className="sidebar-button">
-          {t.navbar.about}{" "}
+          {t.navbar.about}
         </button>
-        <button
-          onClick={() => scrollTo(experienceRef)}
-          className="sidebar-button"
-        >
-          {t.navbar.experience}{" "}
+        <button onClick={() => scrollTo(experienceRef)} className="sidebar-button">
+          {t.navbar.experience}
         </button>
-        <button
-          onClick={() => scrollTo(projectsRef)}
-          className="sidebar-button"
-        >
-          {t.navbar.projects}{" "}
+        <button onClick={() => scrollTo(projectsRef)} className="sidebar-button">
+          {t.navbar.projects}
         </button>
       </div>
     </header>

@@ -50,7 +50,6 @@ export default function Home() {
 
   return (
     <div className="h-full w-full bg-black relative overflow-y">
-      {/* Fondo y estrellas */}
       <div className="absolute inset-0 h-screen">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.15)_0%,rgba(0,0,0,0)_80%)]" />
         <div className="stars absolute inset-0" />
@@ -86,7 +85,6 @@ export default function Home() {
         <BtnBackHome homeRef={homeRef} />
       </div>
       <GmailButton />
-      {/* Shooting Stars */}
       <ShootingStars
         className="absolute inset-0"
         starColor="#9E00FF"

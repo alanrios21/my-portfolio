@@ -18,6 +18,7 @@ import {
   FaJs,
   FaGitAlt,
   FaGithub,
+  FaLinkedin
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -31,7 +32,6 @@ import {
   SiPostman,
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
 import { useTranslation } from "@/Hooks/useTranslation";
 
 const techStack = [

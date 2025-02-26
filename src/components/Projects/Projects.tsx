@@ -8,7 +8,6 @@ import { AiFillEye } from "react-icons/ai";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "../Footer/Footer";
-import "./Projects.css";
 
 interface ProjectsProps {
   contentHeight: number;
@@ -17,42 +16,38 @@ interface ProjectsProps {
 export default function Projects({ contentHeight }: ProjectsProps) {
   const t = useTranslation();
   const projects = t.projects?.projectList || [];
-
   const [dynamicMargin, setDynamicMargin] = useState(contentHeight);
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
       let newMargin = contentHeight;
-
+      
       if (width <= 398) {
         newMargin += 100;
       } else if (width <= 446) {
         newMargin += 50;
       }
-      if (width <= 341) {
+      if (width <= 346) {
         newMargin += 120;
       }
-
-      console.log("Dynamic Margin:", newMargin);
+      
       setDynamicMargin(newMargin);
     };
 
-    handleResize(); // Llama inicialmente
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [contentHeight]);
-
-  useEffect(() => {
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
       once: true,
     });
-  }, []);
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [contentHeight]);
 
   return (
     <>
@@ -62,7 +57,7 @@ export default function Projects({ contentHeight }: ProjectsProps) {
         style={{ marginTop: dynamicMargin }}
       >
         <h2 className="text-lg sm:text-2xl font-bold mb-8 text-white">
-          {t.projects.title}{" "}
+          {t.projects.title} 
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {projects.map((project) => (
@@ -80,7 +75,7 @@ export default function Projects({ contentHeight }: ProjectsProps) {
               />
               <div className="p-4 text-center">
                 <h3 className="text-[16px] font-medium mb-2">
-                  {project.title}{" "}
+                  {project.title}
                 </h3>
                 <div className="flex flex-wrap justify-center gap-2 mb-3">
                   {project.technologies.map((tech, index) => (
