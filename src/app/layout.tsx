@@ -1,15 +1,19 @@
-"use client";
-
 import { Poppins } from "next/font/google";
-import { HeroUIProvider } from "@heroui/react";
-
 import "./globals.css";
+import ClientProviders from "./ThemeProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
 });
+
+export const metadata = {
+  title: "Mi Portafolio",
+  icons: {
+    icon: "/cohete.png",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -19,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.variable}>
-        <HeroUIProvider>{children}</HeroUIProvider>
+        <ClientProviders>{children}</ClientProviders>
       </body>
     </html>
   );
