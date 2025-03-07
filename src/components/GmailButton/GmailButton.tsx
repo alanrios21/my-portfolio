@@ -11,6 +11,18 @@ import "aos/dist/aos.css";
 const GmailButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const t = useTranslation();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
+
+    // Detectar si el usuario está en un dispositivo móvil
+    setIsMobile(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent));
+  }, []);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -20,19 +32,18 @@ const GmailButton = () => {
     setIsModalOpen(false);
   };
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
-
   const handleOpenGmail = () => {
     const recipient = "riosalan264@gmail.com";
     const subject = encodeURIComponent("Oportunidad de colaboración");
-    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}`;
-    window.open(mailtoLink, "_blank");
+
+    if (isMobile) {
+      // Abrir directamente la app de Gmail en móviles
+      window.location.href = `mailto:${recipient}?subject=${subject}`;
+    } else {
+      // Abrir Gmail en el navegador en escritorio
+      const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}`;
+      window.open(mailtoLink, "_blank");
+    }
   };
 
   return (
