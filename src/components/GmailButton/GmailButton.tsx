@@ -20,7 +20,6 @@ const GmailButton = () => {
       once: true,
     });
 
-    // Detectar si el usuario está en un dispositivo móvil
     setIsMobile(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent));
   }, []);
 
@@ -37,10 +36,8 @@ const GmailButton = () => {
     const subject = encodeURIComponent("Oportunidad de colaboración");
 
     if (isMobile) {
-      // Abrir directamente la app de Gmail en móviles
       window.location.href = `mailto:${recipient}?subject=${subject}`;
     } else {
-      // Abrir Gmail en el navegador en escritorio
       const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}`;
       window.open(mailtoLink, "_blank");
     }

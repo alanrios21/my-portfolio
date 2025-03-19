@@ -72,16 +72,23 @@ export const translations = {
       title: "Mi experiencia",
       experiences: [
         {
-          title: "Mentor Full Stack - InnovaTeam",
-          duration: "Sept. 2024 - Feb. 2025 (6 meses)",
+          title: "Desarrollador Full Stack - Grupo Tagle",
+          duration: "Feb. 2025 - Actualidad",
           tasks: [
-            "Explicar teorías e implementar mediante prácticas las bases de programación.",
-            "Enseñar mejores prácticas de codificación y documentación de tareas de desarrollo.",
+            "Encargarme del desarrollo y mantenimiento de aplicaciones dentro de un ecosistema con más de 70 sistemas Core y Satélites.",
+            "Colaborar con el equipo técnico para implementar nuevas funcionalidades y optimizar el rendimiento de las soluciones.",
+            "Desarrollar nuevas funcionalidades y evolutivos en aplicaciones.",
+            "Mantener y optimizar aplicaciones existentes para mejorar su estabilidad y eficiencia.",
+            "Colaborar con otros desarrolladores y equipos técnicos para garantizar la integración de sistemas.",
+            "Implementar buenas prácticas de desarrollo, asegurando la calidad del código",
+            "Optimizar bases de datos para mejorar el rendimiento y escalabilidad de las aplicaciones.",
+            "Participar en revisiones de código y fomentar estándares de calidad en el desarrollo.",
+            "Explorar y proponer mejoras tecnológicas alineadas con las necesidades del negocio."
           ],
         },
         {
           title: "Desarrollador Full Stack - AWESOME.AR",
-          duration: "Dic. 2023 - Sept. 2024 (10 meses)",
+          duration: "Dic. 2023 - Feb. 2025 (1 año 3 meses)",
           clients: [
             {
               name: "Balance Nutrition",
@@ -150,7 +157,7 @@ export const translations = {
         },
         {
           title: "Desarrollador Full Stack - TYCON",
-          duration: "Feb. 2020 - Oct. 2020 (9 meses)",
+          duration: "Feb. 2020 - Mar. 2021 (1 año 2 meses)",
           tasks: [
             "Desarrollar una plataforma de ecommerce para un cliente interno, optimizando la gestión de ventas y productos en línea.",
             "Implementar funcionalidades para el catálogo de productos, carrito de compras y pasarela de pagos.",
@@ -232,16 +239,23 @@ export const translations = {
       title: "My Experience",
       experiences: [
         {
-          title: "Full Stack Mentor - InnovaTeam",
-          duration: "Sept. 2024 - Feb. 2025 (6 months)",
+          title: "Full Stack Developer - Grupo Tagle",
+          duration: "Feb. 2025 - Present",
           tasks: [
-            "Explain programming fundamentals through theory and hands-on exercises.",
-            "Teach best practices for coding and task documentation in development.",
-          ],
+            "Take charge of the development and maintenance of applications within an ecosystem with more than 70 core and satellite systems.",
+            "Collaborate with the technical team to implement new features and optimize solution performance.",
+            "Develop new features and enhancements in applications.",
+            "Maintain and optimize existing applications to improve their stability and efficiency.",
+            "Work with other developers and technical teams to ensure system integration.",
+            "Implement best development practices, ensuring code quality.",
+            "Optimize databases to improve application performance and scalability.",
+            "Participate in code reviews and promote development quality standards.",
+            "Explore and propose technological improvements aligned with business needs."
+          ],   
         },
         {
           title: "Full Stack Developer - AWESOME.AR",
-          duration: "Dec. 2023 - Sept. 2024 (10 months)",
+          duration: "Dec. 2023 - Feb. 2025 (1 year 3 months)",
           clients: [
             {
               name: "Balance Nutrition",
@@ -310,7 +324,7 @@ export const translations = {
         },
         {
           title: "Full Stack Developer - TYCON",
-          duration: "Feb. 2020 - Oct. 2020 (9 months)",
+          duration: "Feb. 2020 - Mar. 2021 (1 year 2 months)",
           tasks: [
             "Develop an ecommerce platform for an internal client, optimizing online sales and product management.",
             "Implement features for product catalog, shopping cart, and payment gateway.",
