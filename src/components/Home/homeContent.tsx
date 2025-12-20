@@ -40,7 +40,7 @@ const HomeContent = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
             {t.home.subtitle}
           </p>
           <div className="mt-8" data-aos="zoom-in" data-aos-delay="400">
-            <Button variant="secondary" downloadUrl="/CV Alan Ríos - 2024.pdf">
+            <Button variant="secondary" downloadUrl="/CV Alan Ríos - 2025.pdf">
               <FaArrowAltCircleUp />
               {t.home.downloadCV}
             </Button>

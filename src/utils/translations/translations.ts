@@ -72,23 +72,23 @@ export const translations = {
       title: "Mi experiencia",
       experiences: [
         {
-          title: "Desarrollador Full Stack - Grupo Tagle",
-          duration: "Feb. 2025 - Actualidad",
+          title: "Ingeniero de Software - Bitlogic",
+          duration: "Sep. 2025 - Actualidad",
           tasks: [
-            "Encargarme del desarrollo y mantenimiento de aplicaciones dentro de un ecosistema con más de 70 sistemas Core y Satélites.",
-            "Colaborar con el equipo técnico para implementar nuevas funcionalidades y optimizar el rendimiento de las soluciones.",
-            "Desarrollar nuevas funcionalidades y evolutivos en aplicaciones.",
-            "Mantener y optimizar aplicaciones existentes para mejorar su estabilidad y eficiencia.",
-            "Colaborar con otros desarrolladores y equipos técnicos para garantizar la integración de sistemas.",
-            "Implementar buenas prácticas de desarrollo, asegurando la calidad del código",
-            "Optimizar bases de datos para mejorar el rendimiento y escalabilidad de las aplicaciones.",
-            "Participar en revisiones de código y fomentar estándares de calidad en el desarrollo.",
-            "Explorar y proponer mejoras tecnológicas alineadas con las necesidades del negocio."
+            "Participar en el desarrollo de la nueva aplicación web de Bancor dentro de la vertical de Medios de Pago, trabajando en un entorno de microfrontends y equipos cross-verticales.",
+            "Desarrollar funcionalidades clave como drawers de detalle de cuenta, buscadores de cuentas propias Bancor y no Bancor, y pantallas de importación y exportación de cuentas mediante archivos CSV.",
+            "Crear y configurar Micro Frontends (MFE), asegurando su correcta integración con el ecosistema existente.",
+            "Implementar y mantener componentes UI utilizando la librería Mantine, incluyendo componentes compartidos a nivel cross.",
+            "Refactorizar código aplicando el patrón Compound Components para mejorar la reutilización, legibilidad y mantenibilidad.",
+            "Consumir e integrar APIs REST y BFF, respetando contratos y buenas prácticas de arquitectura.",
+            "Gestionar el estado de la aplicación utilizando Zustand, garantizando una experiencia de usuario consistente.",
+            "Implementar pruebas unitarias y de integración con Testing Library y Jest, manteniendo un 100% de coverage en los módulos desarrollados.",
+            "Colaborar activamente con equipos multidisciplinarios, priorizando la calidad del código y la escalabilidad de la solución.",
           ],
         },
         {
           title: "Desarrollador Full Stack - AWESOME.AR",
-          duration: "Dic. 2023 - Feb. 2025 (1 año 3 meses)",
+          duration: "Dic. 2023 - Ago. 2025 (1 año 9 meses)",
           clients: [
             {
               name: "Balance Nutrition",
@@ -239,23 +239,23 @@ export const translations = {
       title: "My Experience",
       experiences: [
         {
-          title: "Full Stack Developer - Grupo Tagle",
-          duration: "Feb. 2025 - Present",
+          title: "Software Engineer - Bitlogic",
+          duration: "Sep. 2025 - Present",
           tasks: [
-            "Take charge of the development and maintenance of applications within an ecosystem with more than 70 core and satellite systems.",
-            "Collaborate with the technical team to implement new features and optimize solution performance.",
-            "Develop new features and enhancements in applications.",
-            "Maintain and optimize existing applications to improve their stability and efficiency.",
-            "Work with other developers and technical teams to ensure system integration.",
-            "Implement best development practices, ensuring code quality.",
-            "Optimize databases to improve application performance and scalability.",
-            "Participate in code reviews and promote development quality standards.",
-            "Explore and propose technological improvements aligned with business needs."
-          ],   
+            "Contributed to the development of Bancor’s new web application within the Payments vertical, working in a microfrontend-based architecture and cross-vertical teams.",
+            "Developed key features such as account detail drawers, search functionality for Bancor and non-Bancor accounts, and CSV-based account import/export screens.",
+            "Created and configured Micro Frontends (MFEs), ensuring seamless integration within the existing ecosystem.",
+            "Implemented and maintained UI components using the Mantine component library, including shared cross-level components.",
+            "Refactored code by applying the Compound Components pattern to improve reusability, readability, and maintainability.",
+            "Integrated REST APIs and BFF services, following architectural best practices and contract definitions.",
+            "Managed application state using Zustand to ensure a consistent and predictable user experience.",
+            "Implemented unit and integration tests using Testing Library and Jest, maintaining 100% test coverage on developed modules.",
+            "Worked closely with multidisciplinary teams, prioritizing code quality, scalability, and long-term maintainability.",
+          ],
         },
         {
           title: "Full Stack Developer - AWESOME.AR",
-          duration: "Dec. 2023 - Feb. 2025 (1 year 3 months)",
+          duration: "Dec. 2023 - Ago. 2025 (1 year 9 months)",
           clients: [
             {
               name: "Balance Nutrition",
